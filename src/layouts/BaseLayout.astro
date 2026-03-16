@@ -1,7 +1,6 @@
 ---
 // Base layout for all pages. Injects SEO meta, canonical, hreflang, OG, Twitter, JSON-LD, and performance tags.
 import SEO from '../components/SEO.astro';
-import '../global.css';
 const { title, description, schema, canonical, isArticle = false } = Astro.props;
 ---
 <html lang="hu">
@@ -18,5 +17,16 @@ const { title, description, schema, canonical, isArticle = false } = Astro.props
   <body data-astro-cid-37fxchch>
     <a href="#main" class="sr-only focus:not-sr-only">Ugrás a tartalomra</a>
     <slot />
+    <style is:global>
+      @tailwind base;
+      @tailwind components;
+      @tailwind utilities;
+
+      body {
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        background-color: white;
+        color: rgb(31 41 55);
+      }
+    </style>
   </body>
 </html>
