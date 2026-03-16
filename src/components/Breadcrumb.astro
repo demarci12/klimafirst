@@ -1,0 +1,15 @@
+---
+// BreadcrumbList with schema
+const { items = [], schema } = Astro.props;
+---
+<nav aria-label="Breadcrumb" class="mb-4">
+  <ol class="flex flex-wrap gap-2 text-sm text-gray-600">
+    {items.map((item, i) => (
+      <li key={i} class="flex items-center">
+        {i > 0 && <span class="mx-1">/</span>}
+        <a href={item.href} class="hover:text-primary underline">{item.label}</a>
+      </li>
+    ))}
+  </ol>
+  {schema && <script type="application/ld+json">{JSON.stringify(schema)}</script>}
+</nav>

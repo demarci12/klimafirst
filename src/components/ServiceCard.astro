@@ -1,0 +1,10 @@
+---
+// ServiceCard: icon, title, description, link
+const { icon, title, description, href, highlight = false } = Astro.props;
+---
+<div class={"rounded shadow p-6 flex flex-col items-center text-center bg-white border " + (highlight ? 'border-secondary' : 'border-gray-200') + " " + (highlight ? 'ring-2 ring-secondary' : '')}>
+  <div class="mb-3">{icon}</div>
+  <h3 class="font-bold text-lg mb-2">{title}</h3>
+  <p class="mb-4 text-gray-600">{description}</p>
+  <a href={href} class="mt-auto px-4 py-2 bg-secondary text-white rounded-full font-semibold shadow hover:bg-primary transition">Tovább</a>
+</div>

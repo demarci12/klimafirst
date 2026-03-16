@@ -1,0 +1,8 @@
+---
+// Blog layout extends BaseLayout, adds Article schema
+import BaseLayout from './BaseLayout.astro';
+const { title, description, schema, canonical } = Astro.props;
+---
+<BaseLayout title={title} description={description} schema={schema} canonical={canonical} isArticle={true}>
+  <slot />
+</BaseLayout>

@@ -1,0 +1,20 @@
+---
+// PriceTable: pricing display
+const { prices = [] } = Astro.props;
+---
+<table class="w-full border rounded shadow bg-white">
+  <thead>
+    <tr class="bg-primary text-white">
+      <th class="p-2">Szolgáltatás</th>
+      <th class="p-2">Ár (nettó Ft + ÁFA)</th>
+    </tr>
+  </thead>
+  <tbody>
+    {prices.map((row, i) => (
+      <tr key={i} class="border-t">
+        <td class="p-2 font-semibold">{row.name}</td>
+        <td class="p-2">{row.price}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>

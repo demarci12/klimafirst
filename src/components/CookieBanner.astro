@@ -1,0 +1,18 @@
+---
+// CookieBanner: GDPR consent, localStorage
+---
+<script>
+  if (typeof window !== 'undefined') {
+    if (!localStorage.getItem('cookieConsent')) {
+      document.getElementById('cookie-banner').style.display = 'block';
+    }
+  }
+  function acceptCookies() {
+    localStorage.setItem('cookieConsent', 'true');
+    document.getElementById('cookie-banner').style.display = 'none';
+  }
+</script>
+<div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-gray-900 text-white p-4 flex justify-between items-center z-50" style="display:none">
+  <span>Sütiket használunk a jobb felhasználói élményért.</span>
+  <button onclick="acceptCookies()" class="bg-secondary text-white px-4 py-2 rounded ml-4">Elfogadom</button>
+</div>

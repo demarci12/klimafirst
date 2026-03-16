@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+const title = "404 – Az oldal nem található | KlimaFirst";
+const description = "A keresett oldal nem található. Kérjük, ellenőrizze a címet vagy térjen vissza a főoldalra.";
+---
+<BaseLayout {title} {description}>
+  <Header />
+  <main class="container mx-auto py-24 text-center">
+    <h1 class="text-4xl font-bold mb-4">404 – Az oldal nem található</h1>
+    <p class="mb-8">A keresett oldal nem létezik vagy már eltávolítottuk.</p>
+    <a href="/" class="bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-secondary transition">Vissza a főoldalra</a>
+  </main>
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,17 @@
+---
+// KlimaCalculator: m2 + ceiling height = kW
+const { mini = false } = Astro.props;
+---
+<form id="klima-calc" class="flex flex-col md:flex-row gap-2 items-end bg-gray-50 p-4 rounded shadow max-w-xl mx-auto">
+  <div>
+    <label class="block text-sm font-semibold mb-1">Helyiség mérete (m²)</label>
+    <input id="area" type="number" min="5" max="200" class="border rounded px-2 py-1 w-24" required />
+  </div>
+  <div>
+    <label class="block text-sm font-semibold mb-1">Belmagasság (m)</label>
+    <input id="height" type="number" min="2" max="4" step="0.1" class="border rounded px-2 py-1 w-16" value="2.7" required />
+  </div>
+  <button type="button" onclick="const a=document.getElementById('area').value,h=document.getElementById('height').value;document.getElementById('calc-result').textContent=a&&h?`${(a*h*40/1000).toFixed(1)} kW`:'-';" class="bg-secondary text-white px-4 py-2 rounded font-semibold ml-2">Számol</button>
+  <div id="calc-result" class="ml-4 font-bold text-primary">-</div>
+  {mini && <a href="/klima-meretezo-kalkulator" class="ml-4 underline text-sm text-secondary">Teljes kalkulátor</a>}
+</form>

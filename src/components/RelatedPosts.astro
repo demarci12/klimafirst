@@ -1,0 +1,15 @@
+---
+// RelatedPosts: dynamic internal linking by tags
+import { getCollection } from 'astro:content';
+const { tags = [], currentSlug } = Astro.props;
+const posts = await getCollection('tudastar');
+const related = posts.filter(p => p.slug !== currentSlug && tags.some(tag => p.data.tags.includes(tag))).slice(0, 3);
+---
+<section>
+  <h2 class="text-lg font-bold mb-2">Kapcsolódó cikkek</h2>
+  <div class="flex flex-col gap-2">
+    {related.map(post => (
+      <a href={`/tudastar/${post.slug}`} class="underline text-primary hover:text-secondary">{post.data.title}</a>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,21 @@
+---
+// Base layout for all pages. Injects SEO meta, canonical, hreflang, OG, Twitter, JSON-LD, and performance tags.
+import SEO from '../components/SEO.astro';
+const { title, description, schema, canonical, isArticle = false } = Astro.props;
+---
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <SEO {title} {description} {schema} {canonical} isArticle={isArticle} />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preload" as="image" href="/images/hero.webp" fetchpriority="high">
+    <slot name="head" />
+  </head>
+  <body class="font-sans bg-white text-gray-900">
+    <a href="#main" class="sr-only focus:not-sr-only">Ugrás a tartalomra</a>
+    <slot />
+  </body>
+</html>
