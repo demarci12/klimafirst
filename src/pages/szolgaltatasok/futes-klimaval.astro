@@ -2,26 +2,254 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import FAQ from '../../components/FAQ.astro';
 import RelatedPosts from '../../components/RelatedPosts.astro';
-const title = "Fűtés Klímával Budapest | Energiatakarékos Megoldás | KlimaFirst";
-const description = "Klímával fűtés Budapesten – gazdaságos alternatíva gáz helyett. Ingyenes felmérés. Dolgozunk H és GEO tarifával is.";
-const schema = {/* Service schema */};
+const title = "Klímafűtés | Energikus és Gazdaságos Megoldás | KlimaFirst";
+const description = "Az inverteres klímák fűtésre is használhatók H tarifás árammal 50-60% kedvezménnyel. Nálunk 1-2 nap alatt kész!";
+const breadcrumb = [
+  { name: "Kezdőlap", url: "/" },
+  { name: "Szolgáltatások", url: "/szolgaltatasok" },
+  { name: "Klímafűtés" }
+];
+const faq = [
+  { q: "Gazdaságos-e fűtésre klímát használni?", a: "Igen! Az inverteres klímák H tarifás árammal 50-60% kedvezménnyel működhetnek télen. Ez azt jelenti, hogy a villanyfűtéshez képest 30-50%-kal olcsóbbabb az üzemeltetés, és a gáz költsége után 40-60%-ot spórolhat. Az átlagos lakás 1-2 tél alatt megfizetődik az inverteres klíma ára." },
+  { q: "Mit kell tenni az H tarifa eléréséhez?", a: "Az E.ON-nál vagy más energiaszolgáltatónál egyszerűen bejelentkezik, hogy inverteres hőszivattyús klímáját szeretné H tarifára váltani. Az MVM vagy E.ON szabályozottan 3-4 hét alatt aktiválja az új tarifát. Szükség lehet külön nyomásmérésre, amit mi is végezhetünk." },
+  { q: "Meddig fűt a klíma télen?", a: "Az inverteres klímák -15°C-ig hatékonyan működnek fűtésre. 0°C alatt kissé csökken a teljesítmény, de -5°C-ig még mindig kifizetődő. Ezért javasoljuk a 3-4 kW-os inverter klímákat a budapesti használatra, hogy elég erős fűtéskapacitás legyen." },
+  { q: "Szükséges-e külön engedély az inverteres klímához?", a: "Házban általában nem szükséges, társasházban azonban a közgyűlésnek jóvá kell hagynia az kültéri egység elhelyezését, a zajszintekre is figyelem. Ingyenes felmérésünk meghatározza a legünk lehetséges helyet." },
+  { q: "Fűtés alatt mennyi az áramköltség?", a: "Egy 3,5 kW-os inverter klímával az átlagos havi fűtésköltség H tarifán 8-12 ezer forint (novembertől márciusig). Ez az elektromos fűtéshez képest 50-60% kedvezmény, és a gáz költsége mellett is sokkal olcsóbb." },
+  { q: "Lehet-e csak fűtésre szerelni, hűtésre nem?", a: "Technikai lehetőség van, de nem javasoljuk. Az inverteres klímák fűtésre és hűtésre egyaránt ideálisak, és a nyári hónapokra felülmúlhatatlan kényelmet biztosítanak. A teljes évet könnyebben kezelhető klímával." },
+  { q: "Garantálva van az inverteres klíma?", a: "Igen! Az inverteres klímák 12 hónapos szerelési garanciát kapnak, az eszköz gyári garanciája pedig általában 3-5 év (függően a márkától). A karbantartási csomag hosszabbítja az élettartamot." },
+  { q: "Szükséges-e speciális szerelés a fűtéshez?", a: "Nem. Az inverteres klímák szerelése fűtésre és hűtésre azonos. Azonban az H tarifához szükséges a helyes refrón-töltés és nyomásszint mérés, amit mi pontosan végzünk." }
+];
 ---
-<BaseLayout {title} {description} schema={schema}>
+<BaseLayout {title} {description}>
   <Header />
   <main class="container mx-auto py-12">
-    <h1 class="text-3xl font-bold mb-6">Fűtés Klímával – Energiatakarékos Megoldás Budapesten</h1>
-    <p>1-2 mondatos placeholder tartalom a fűtési megoldásokról.</p>
-    <section class="mb-8">
-      <h2 class="text-2xl font-bold mb-4">Klíma vs Gáz vs Villany Fűtés Összehasonlítása</h2>
-      <p>Placeholder tartalma az összehasonlító táblázatnak.</p>
+    <Breadcrumb items={breadcrumb} />
+    <h1 class="text-3xl font-bold mb-2">Gazdaságos Klímafűtés H Tarifával</h1>
+    <p class="text-lg text-gray-600 mb-8">Az inverteres klímák fűtésre is ideális megoldást nyújtanak, különösen az H tarifás árammal kombinálva. 50-60% kedvezmény akár 300.000 Ft-os megtakarítás évente!</p>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Miért Klímafűtés?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="p-6 bg-blue-50 rounded">
+          <h3 class="font-bold mb-2">💰 Gazdaságos</h3>
+          <p>Az inverteres klímák fűtés-hatásfoka 3-4:1 (1 kW áram → 3-4 kW hő). H tarifával egy olyan rendszert kap, amely 50-60% olcsóbban működik az elektromos fűtéshez képest, és 40-60%-kal olcsóbban, mint a gáz.</p>
+        </div>
+        <div class="p-6 bg-green-50 rounded">
+          <h3 class="font-bold mb-2">🌡️ Precíz Hőmérséklet</h3>
+          <p>Az inverteres klímák 0,5°C pontossággal tartják a kívánt hőmérsékletet, így nem függ az időjárásától a kényelme, és minimális az energia-pazarlás.</p>
+        </div>
+        <div class="p-6 bg-orange-50 rounded">
+          <h3 class="font-bold mb-2">🌬️ Egyéves Kényelm</h3>
+          <p>Nem csak fűtés: nyáron hűtés, tavasszal/ősszel enyhébb levegőcserélés. Egy inverter klímával az egész évszakot könnyen kezelheti.</p>
+        </div>
+        <div class="p-6 bg-purple-50 rounded">
+          <h3 class="font-bold mb-2">⚡ Energia Hatékony</h3>
+          <p>Az inverteres kompresszor a tényleges igénynek megfelelően működik, nem kapcsol ki/be. Ez 20-30% energiamegtakarítást jelent a szokásos klímák mellett.</p>
+        </div>
+      </div>
     </section>
-    <section class="mb-8">
-      <h2 class="text-2xl font-bold mb-4">H Tarifa és GEO Tarifa</h2>
-      <p>Placeholder tartalma a tarifákról és az energiatakarékosságról.</p>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Fűtés Összehasonlítás: Klíma vs Gáz vs Villany</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse border border-gray-300">
+          <thead class="bg-primary text-white">
+            <tr>
+              <th class="border border-gray-300 p-3">Szempont</th>
+              <th class="border border-gray-300 p-3">Inverter Klíma (H Tarifa)</th>
+              <th class="border border-gray-300 p-3">Gáz Kombi-kazán</th>
+              <th class="border border-gray-300 p-3">Elektromos Radiátor</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border border-gray-300 p-3 font-bold">Teljesítménytényező</td>
+              <td class="border border-gray-300 p-3">3-4:1 (COP)</td>
+              <td class="border border-gray-300 p-3">0,9:1</td>
+              <td class="border border-gray-300 p-3">1:1</td>
+            </tr>
+            <tr class="bg-gray-100">
+              <td class="border border-gray-300 p-3 font-bold">Éves költség (3500 m³/1000m2)</td>
+              <td class="border border-gray-300 p-3">40-50 ezer Ft</td>
+              <td class="border border-gray-300 p-3">60-80 ezer Ft</td>
+              <td class="border border-gray-300 p-3">80-120 ezer Ft</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-300 p-3 font-bold">Szerelésköltség</td>
+              <td class="border border-gray-300 p-3">80-120 ezer Ft</td>
+              <td class="border border-gray-300 p-3">150-250 ezer Ft</td>
+              <td class="border border-gray-300 p-3">10-20 ezer Ft</td>
+            </tr>
+            <tr class="bg-gray-100">
+              <td class="border border-gray-300 p-3 font-bold">ROI (megtérülés)</td>
+              <td class="border border-gray-300 p-3">1-2 év</td>
+              <td class="border border-gray-300 p-3">2-3 év</td>
+              <td class="border border-gray-300 p-3">Soha</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-300 p-3 font-bold">Hűtéskapacitás</td>
+              <td class="border border-gray-300 p-3">✓ Igen</td>
+              <td class="border border-gray-300 p-3">✗ Nem</td>
+              <td class="border border-gray-300 p-3">✗ Nem</td>
+            </tr>
+            <tr class="bg-gray-100">
+              <td class="border border-gray-300 p-3 font-bold">Zaj szint</td>
+              <td class="border border-gray-300 p-3">18-22 dB</td>
+              <td class="border border-gray-300 p-3">60-80 dB</td>
+              <td class="border border-gray-300 p-3">50-60 dB</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-300 p-3 font-bold">Élettartam</td>
+              <td class="border border-gray-300 p-3">12-15 év</td>
+              <td class="border border-gray-300 p-3">10-12 év</td>
+              <td class="border border-gray-300 p-3">5-7 év</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-sm text-gray-600 mt-4">*A költségek átlagos 80 m2-es budapest apartmanra vonatkoznak, éves átlagos fűtési igény alapján</p>
     </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">H Tarifa - Hogyan Működik?</h2>
+      <div class="bg-blue-50 border-l-4 border-primary p-6 rounded mb-4">
+        <h3 class="font-bold mb-3 text-lg">Mi az H Tarifa?</h3>
+        <p class="mb-4">Az H tarifa (hőszivattyús tarifa) egy speciális elektromos áramszolgáltatási csomag, amely 50-60% kedvezményt biztosít az inverteres hőszívattya (klíma) fűtéshez. Az E.ON és MVM egyaránt kínálja a szokásos áramtarifához képest jelentősen kedvezőbb áron.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <h4 class="font-bold mb-2">Szokásos Áram</h4>
+            <p>2024-ben: ~50-60 Ft/kWh</p>
+          </div>
+          <div>
+            <h4 class="font-bold mb-2">H Tarifa</h4>
+            <p>2024-ben: ~20-30 Ft/kWh</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded mb-4">
+        <h3 class="font-bold mb-3 text-lg">H Tarifa Feltételei</h3>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Inverteres hőszivattyú szükséges:</strong> A standard klímák nem jogosultak H tarifára, csak az inverter típusúak.</li>
+          <li><strong>Különálló mérő:</strong> Szükséges egy dedikált elektromos mérő a klímához (vagy zónamérő a lakáson belül).</li>
+          <li><strong>Éves teljesítménytényező:</strong> Minimum 2,5-ös COP (Coefficient of Performance) szükséges az energiaszolgáltatót.</li>
+          <li><strong>Regisztráció:</strong> Az energiaszolgáltatóval regisztrálni kell a hőszivattyús fűtésre.</li>
+        </ul>
+      </div>
+
+      <div class="bg-orange-50 border-l-4 border-orange-500 p-6 rounded">
+        <h3 class="font-bold mb-3 text-lg">Hogyan Igényelje az H Tarifát?</h3>
+        <ol class="list-decimal pl-6 space-y-2">
+          <li><strong>Kapcsolatfelvétel:</strong> Hívjon minket az ingyenes felméréshez és a klíma típusának meghatározásához.</li>
+          <li><strong>Szakszerű szerelés:</strong> Mi szerelje fel az inverteres klímát a szabályok szerint.</li>
+          <li><strong>Nyomásmérés és beüzemelés:</strong> Elvégezzük a pontos refrón-töltést és teljesítménymérést.</li>
+          <li><strong>Energiaszolgáltató jelentkezés:</strong> Az E.ON vagy MVM-nél bejelentkezik az H tarifa igényléshez (3-4 hét aktiválási idő).</li>
+          <li><strong>Profitálás:</strong> Novembertől márciusig 50-60% árammegtakarítás!</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">GEO Tarifa - Alternatív Megoldás</h2>
+      <p class="mb-4">Az MVM másik opciójaként kínálja a GEO tarifát (Geoterm), amely szintén hőszivattyús rendszerekhez kedvezményes áramot nyújt:</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="p-6 bg-gray-50 rounded border-l-4 border-secondary">
+          <h3 class="font-bold mb-2">H Tarifa</h3>
+          <ul class="space-y-1 text-sm">
+            <li>✓ Fűtés: 50-60% kedvezmény</li>
+            <li>✓ Hűtés: szokásos ár</li>
+            <li>✓ Egyszerűbb igénylés</li>
+            <li>✗ E.ON és MVM csak</li>
+          </ul>
+        </div>
+        <div class="p-6 bg-gray-50 rounded border-l-4 border-primary">
+          <h3 class="font-bold mb-2">GEO Tarifa (MVM)</h3>
+          <ul class="space-y-1 text-sm">
+            <li>✓ Fűtés + hűtés: 40-50%</li>
+            <li>✓ Egyéb használat szokásos</li>
+            <li>✓ Több igény + szerelés</li>
+            <li>✓ MVM csomag</li>
+          </ul>
+        </div>
+      </div>
+      <p class="text-sm text-gray-600 mt-4">Az Ön esetében az H tarifa előnyösebb, ha csak fűtésre szereli az inverteres klímát. Ha hűtésre is gyakran szükséges, a GEO tarifa lehet a jobb választás.</p>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Klímafűtés Szerelésének Menete</h2>
+      <div class="space-y-4">
+        <div class="flex gap-4">
+          <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">1</div>
+          <div>
+            <h3 class="font-bold">Ingyenes Helyszíni Felmérés</h3>
+            <p class="text-gray-700">Megvizsgáljuk az apartman hőkavasztó szükségletét, az optimális helyet a beltéri és kültéri egységhez, valamint az energetikai potenciált.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">2</div>
+          <div>
+            <h3 class="font-bold">Termékkiválasztás és Ajánlat</h3>
+            <p class="text-gray-700">Javasoljuk az ideális inverteres klímát (3-5 kW), az E.ON/MVM H tarifás igényeitől függően. Az ajánlat tartalmazza az összes költséget.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">3</div>
+          <div>
+            <h3 class="font-bold">Szerelés (1-2 nap)</h3>
+            <p class="text-gray-700">Beszereljük az inverteres klímát: falhorony vágás, rézcső húzása, beltéri és kültéri egység telepítése, kondenzációs cső vezet.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">4</div>
+          <div>
+            <h3 class="font-bold">Pontos Nyomásmérés és Beüzemelés</h3>
+            <p class="text-gray-700">A precíz refrón-töltés és nyomásszintek beállítása biztosítja az H tarifa jogosultságát és az optimális teljesítményt.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">5</div>
+          <div>
+            <h3 class="font-bold">H Tarifa Bejelentkezés</h3>
+            <p class="text-gray-700">Segítünk az E.ON vagy MVM H tarifás csomag igénylésében. 3-4 hét után már 50-60% kedvezménnyel fűtheti a lakást!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Gyakori Kérdések a Klímafűtésről</h2>
+      <FAQ {faq} />
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Javasolt Klímák Fűtésre</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="border rounded p-4">
+          <h3 class="font-bold mb-2">Kis Lakások (20-40 m2)</h3>
+          <p class="text-gray-700 text-sm">2.5-3.5 kW inverteres klíma<br/>Költség: 70-100 ezer Ft<br/>H Tarifa költség: 3-5 ezer Ft/hó</p>
+        </div>
+        <div class="border rounded p-4 bg-blue-50">
+          <h3 class="font-bold mb-2">Közepes Lakások (40-80 m2) ⭐</h3>
+          <p class="text-gray-700 text-sm">3.5-5 kW inverteres klíma<br/>Költség: 90-130 ezer Ft<br/>H Tarifa költség: 5-8 ezer Ft/hó</p>
+        </div>
+        <div class="border rounded p-4">
+          <h3 class="font-bold mb-2">Nagy Lakások (80+ m2)</h3>
+          <p class="text-gray-700 text-sm">5-7 kW inverteres klíma<br/>Költség: 120-170 ezer Ft<br/>H Tarifa költség: 8-12 ezer Ft/hó</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="bg-secondary text-white rounded p-6 mb-8 text-center">
+      <h2 class="text-2xl font-bold mb-2">Ingyenes Felmérés az Ön Lakásához!</h2>
+      <p class="mb-4">Meghatározzuk az ideális klímát, az H tarifás megtakarítást és a legpon költségeket.</p>
+      <a href="/ajanlatkeres" class="inline-block bg-white text-secondary px-6 py-2 rounded-full font-semibold hover:bg-primary hover:text-white transition mr-4">Ajánlatkérés</a>
+      <a href="tel:+36203394164" class="inline-block bg-primary text-white px-6 py-2 rounded-full font-semibold hover:bg-white hover:text-secondary transition">+36 20 339 4164</a>
+    </div>
+
     <RelatedPosts tags={["futes"]} />
-    <a href="/kapcsolat" class="inline-block mt-8 bg-secondary text-white px-6 py-2 rounded-full font-semibold hover:bg-primary transition">Kapcsolat</a>
   </main>
   <Footer />
 </BaseLayout>

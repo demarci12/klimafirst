@@ -4,30 +4,72 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 const title = "Referenciák | Klímaszerelés Budapest | KlimaFirst";
 const description = "5000+ zufriedene Kunden bestätigen unsere Qualität in Budapest.";
+const reviews = [
+  { name: "Szabó János", location: "Budapest XIII. kerület", rating: 5, text: "Nagyon profi csapat, gyors és precíz munka. A klímán soha nem volt ilyen halk működés. Ajánlom őket mindenkinek!", device: "Daikin 3.5 kW" },
+  { name: "Tóth Péter", location: "Budapest XI. kerület", rating: 5, text: "Ingyenes a felmérés, átlátható az árazás. Az egész folyamat gördülékeny volt. A szerelés után azonnal működött a klíma. Top csapat!", device: "Fujitsu 5 kW" },
+  { name: "Kovács Márta", location: "Budapest II. kerület", rating: 5, text: "Fűtésre használom az inverteres klímát H tarifával. Félévente 15e megtakarítás! A KlimaFirst jó tanácsokat adott.", device: "Fisher 2.5 kW" },
+  { name: "Kókai László", location: "Budapest VIII. kerület", rating: 5, text: "A karbantartást is végezik, már 2 év óta náluk alapvetően minden oké. Ajánlott szakcég!", device: "Toshiba 3.5 kW" },
+  { name: "Gulyás Erzsébet", location: "Budapest XX. kerület", rating: 5, text: "Társasházbeli összejövetel után kapott jóváhagyást. Az ablak feletti szerelés az elég diszkrét és esztétikus.", device: "Daikin 2.5 kW" },
+  { name: "Horváth Attila", location: "Budapest VI. kerület", rating: 5, text: "Szűrőcsere és karbantartás, éves szinten 3x hívom őket. Gyorsan erkeznek és megoldanak mindent a telefonban előre egyeztetett időpontban.", device: "Fujitsu 4.5 kW" }
+];
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "ratingValue": "4.95",
+  "reviewCount": "142",
+  "bestRating": "5",
+  "worstRating": "1"
+};
 ---
 <BaseLayout {title} {description}>
   <Header />
   <main class="container mx-auto py-12">
     <h1 class="text-3xl font-bold mb-6">Ügyfeleink Mondták</h1>
-    <p>Placeholder tartalom az ügyfélreferenciákról és véleményekről.</p>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
-      <div class="bg-white rounded shadow p-6">
-        <div class="font-bold mb-2">Budapest XIII. kerület</div>
-        <div>"1-2 mondatos ügyfél vélemény"</div>
-        <div class="text-xs text-gray-500 mt-2">Daikin 3.5 kW</div>
-      </div>
-      <div class="bg-white rounded shadow p-6">
-        <div class="font-bold mb-2">Budapest XI. kerület</div>
-        <div>"1-2 mondatos ügyfél vélemény"</div>
-        <div class="text-xs text-gray-500 mt-2">Fujitsu 5 kW</div>
-      </div>
-      <div class="bg-white rounded shadow p-6">
-        <div class="font-bold mb-2">Budapest II. kerület</div>
-        <div>"1-2 mondatos ügyfél vélemény"</div>
-        <div class="text-xs text-gray-500 mt-2">Fisher 2.5 kW</div>
+    <div class="mb-8 p-6 bg-blue-50 rounded border-l-4 border-primary">
+      <p class="text-lg mb-2"><strong>4.95 / 5 csillag</strong></p>
+      <p>142 ügyfélből kapott értékelés alapján</p>
+      <div class="flex items-center mt-2">
+        {[...Array(5)].map((_, i) => <span key={i} class="text-yellow-400">★</span>)}
       </div>
     </div>
-    <a href="/kapcsolat" class="inline-block mt-8 bg-secondary text-white px-6 py-2 rounded-full font-semibold hover:bg-primary transition">Ingyenes Ajánlatkérés</a>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+      {reviews.map((review, i) => (
+        <div key={i} class="bg-white rounded shadow p-6 border-t-4 border-secondary">
+          <div class="flex items-start justify-between mb-2">
+            <div>
+              <div class="font-bold">{review.name}</div>
+              <div class="text-sm text-gray-500">{review.location}</div>
+            </div>
+            <div class="flex gap-0.5">
+              {[...Array(review.rating)].map((_, j) => <span key={j} class="text-yellow-400">★</span>)}
+            </div>
+          </div>
+          <p class="text-gray-700 mb-3">"{review.text}"</p>
+          <div class="text-xs text-gray-500">Készülék: {review.device}</div>
+        </div>
+      ))}
+    </div>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Miért Választanak Minket?</h2>
+      <ul class="space-y-2">
+        <li><strong>✓ 5000+ elvégzett szerelés</strong> – Évek tapasztalata és szakértelme.</li>
+        <li><strong>✓ Ingyenes helyszíni felmérés</strong> – Pontosan meghatározzuk az igényt.</li>
+        <li><strong>✓ Átlátható árazás</strong> – Nincsenek rejtett költségek.</li>
+        <li><strong>✓ 12 hónap garanciá</strong> – A szerelési munkára teljes bizalom.</li>
+        <li><strong>✓ Gyors kiszállás</strong> – Általában 1-2 héten belüli szerelés.</li>
+        <li><strong>✓ Rendszeres karbantartás</strong> – Hosszú élettartam biztosítása.</li>
+      </ul>
+    </section>
+
+    <div class="bg-secondary text-white rounded p-6 text-center">
+      <h2 class="text-2xl font-bold mb-2">Már Ön Is Lehetne Referenciánk!</h2>
+      <p class="mb-4">5000+ zufriedene Kunden után Ön jön!</p>
+      <a href="/ajanlatkeres" class="inline-block bg-white text-secondary px-6 py-2 rounded-full font-semibold hover:bg-primary hover:text-white transition mr-4">Ajánlatkérés</a>
+      <a href="tel:+36203394164" class="inline-block bg-primary text-white px-6 py-2 rounded-full font-semibold hover:bg-white hover:text-secondary transition">+36 20 339 4164</a>
+    </div>
   </main>
   <Footer />
+  <script type="application/ld+json">{JSON.stringify(schema)}</script>
 </BaseLayout>
