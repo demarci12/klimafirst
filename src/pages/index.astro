@@ -10,40 +10,138 @@ import Footer from '../components/Footer.astro';
   <Header />
 
   <!-- Hero Section -->
-  <section class="bg-gradient-to-br from-blue-50 to-white py-16">
-    <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto text-center">
-        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-          Klímaszerelés Budapest – Ingyenes Felméressel
-        </h1>
-        <p class="text-xl text-gray-600 mb-8">
-          Szakszerű klíma telepítés, javítás és karbantartás Budapest területén. Ingyenes felmérés és konzultáció.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/ajanlatkeres" class="px-8 py-4 bg-secondary text-white rounded-lg font-semibold shadow-lg hover:shadow-xl transition-shadow">
-            Ajánlatkérés
-          </a>
-          <a href="tel:+36203394164" class="px-8 py-4 bg-white border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors">
-            Hívás
-          </a>
+  <section class="relative overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+    <div class="absolute inset-0" style="background-image: radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(255,255,255,0.1) 0%, transparent 50%);"></div>
+
+    <div class="relative container mx-auto px-4 py-20 lg:py-32">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Left Content -->
+          <div class="space-y-8">
+            <div class="inline-flex items-center px-4 py-2 bg-white bg-opacity-10 backdrop-blur-sm rounded-full text-sm font-medium">
+              <span class="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+              Elérhető 24/7 – Ingyenes felmérés
+            </div>
+
+            <h1 class="text-4xl lg:text-6xl font-bold leading-tight">
+              Professzionális
+              <span class="text-yellow-300">Klímaszerelés</span>
+              Budapesten
+            </h1>
+
+            <p class="text-xl text-blue-100 leading-relaxed">
+              5000+ elégedett ügyfél. Szakszerű klíma telepítés, javítás és karbantartás.
+              Inverteres és hagyományos rendszerek. 12 hónap garancia minden munkára.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="tel:+36203394164" class="group px-8 py-4 bg-yellow-500 hover:bg-yellow-400 text-black font-bold rounded-xl shadow-2xl hover:shadow-yellow-500/25 transition-all duration-300 transform hover:scale-105">
+                <div class="flex items-center justify-center gap-3">
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                  </svg>
+                  +36 20 339 4164
+                </div>
+              </a>
+              <a href="/ajanlatkeres" class="px-8 py-4 bg-white bg-opacity-10 backdrop-blur-sm hover:bg-opacity-20 text-white font-semibold rounded-xl border border-white border-opacity-20 transition-all duration-300">
+                Ingyenes Árajánlat
+              </a>
+            </div>
+
+            <!-- Trust Indicators -->
+            <div class="flex flex-wrap gap-6 pt-8">
+              <div class="flex items-center gap-2">
+                <div class="w-5 h-5 bg-green-400 rounded-full flex items-center justify-center">
+                  <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <span class="text-sm">Ingyenes felmérés</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-5 h-5 bg-green-400 rounded-full flex items-center justify-center">
+                  <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <span class="text-sm">12 hónap garancia</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-5 h-5 bg-green-400 rounded-full flex items-center justify-center">
+                  <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <span class="text-sm">24/7 ügyelet</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Content - Hero Visual -->
+          <div class="relative">
+            <div class="relative bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl p-8 shadow-2xl">
+              <!-- Mock AC Unit Visual -->
+              <div class="text-center space-y-6">
+                <div class="w-32 h-32 mx-auto bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center shadow-lg">
+                  <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                  </svg>
+                </div>
+                <div class="space-y-2">
+                  <h3 class="text-2xl font-bold text-white">KlímaFirst</h3>
+                  <p class="text-blue-100">Professzionális klímaszerelés</p>
+                  <div class="flex justify-center gap-1">
+                    <div class="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
+                    <div class="w-2 h-2 bg-yellow-400 rounded-full animate-pulse" style="animation-delay: 0.2s"></div>
+                    <div class="w-2 h-2 bg-yellow-400 rounded-full animate-pulse" style="animation-delay: 0.4s"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Floating Elements -->
+              <div class="absolute -top-4 -right-4 w-8 h-8 bg-yellow-400 rounded-full animate-bounce"></div>
+              <div class="absolute -bottom-4 -left-4 w-6 h-6 bg-blue-300 rounded-full animate-pulse"></div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-2 gap-4 mt-6">
+              <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-4 text-center">
+                <div class="text-2xl font-bold text-white">5000+</div>
+                <div class="text-sm text-blue-100">Elvégzett szerelés</div>
+              </div>
+              <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-4 text-center">
+                <div class="text-2xl font-bold text-white">15+</div>
+                <div class="text-sm text-blue-100">Év tapasztalat</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="mt-12 max-w-4xl mx-auto">
-        <!-- Hero Image Placeholder -->
-        <div class="bg-gray-200 rounded-lg h-64 flex items-center justify-center text-gray-500">
-          Hero Image Placeholder
-        </div>
-      </div>
+    </div>
+
+    <!-- Wave Separator -->
+    <div class="absolute bottom-0 left-0 right-0">
+      <svg viewBox="0 0 1440 120" class="w-full h-20 text-white">
+        <path fill="currentColor" d="M0,32L48,37.3C96,43,192,53,288,58.7C384,64,480,64,576,58.7C672,53,768,43,864,48C960,53,1056,75,1152,80C1248,85,1344,75,1392,69.3L1440,64L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"></path>
+      </svg>
     </div>
   </section>
 
   <TrustBar />
 
-  <!-- Services Grid -->
-  <section class="py-16">
+  <!-- Services Section -->
+  <section class="py-20 bg-gray-50">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Szolgáltatásaink</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Szolgáltatásaink</h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Komplex klíma megoldások Budapest teljes területén. Minőségi munkavégzés, garanciával.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
         <ServiceCard
           title="Klíma Telepítés"
           description="Szakszerű klíma telepítés Budapest területén. Inverteres és hagyományos klímák beszerelése garanciával."
@@ -59,6 +157,74 @@ import Footer from '../components/Footer.astro';
           description="Energiatakarékos fűtés klímával. H tarifás megoldások Budapesten."
           href="/szolgaltatasok/futes-klimaval"
         />
+      </div>
+
+      <!-- CTA Section -->
+      <div class="text-center">
+        <div class="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 text-white shadow-2xl">
+          <h3 class="text-2xl font-bold mb-4">Készen áll a klíma beszerelésére?</h3>
+          <p class="text-blue-100 mb-6">Hívjon most és kérje ingyenes felmérésünket!</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="tel:+36203394164" class="px-8 py-3 bg-yellow-500 hover:bg-yellow-400 text-black font-bold rounded-lg transition-colors">
+              +36 20 339 4164
+            </a>
+            <a href="/ajanlatkeres" class="px-8 py-3 bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold rounded-lg transition-colors">
+              Árajánlat Kérés
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Miért válasszon minket?</h2>
+        <p class="text-xl text-gray-600">15+ év tapasztalat és 5000+ elégedett ügyfél</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="text-center p-6">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Minőségi Munka</h3>
+          <p class="text-gray-600">Csak szakszerű, garanciális munkát vállalunk</p>
+        </div>
+
+        <div class="text-center p-6">
+          <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Gyors Szolgáltatás</h3>
+          <p class="text-gray-600">Azonnali reagálás és rövid határidők</p>
+        </div>
+
+        <div class="text-center p-6">
+          <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Átlátható Árak</h3>
+          <p class="text-gray-600">Nincs rejtett költség, fix árak</p>
+        </div>
+
+        <div class="text-center p-6">
+          <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">24/7 Támogatás</h3>
+          <p class="text-gray-600">Bármikor hívhat, segítünk</p>
+        </div>
       </div>
     </div>
   </section>
