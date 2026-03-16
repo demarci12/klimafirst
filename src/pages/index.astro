@@ -1,11 +1,67 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import TrustBar from '../components/TrustBar.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout title="KlimaFirst - Klímaszerelés Budapest" description="Klímaszerelés Budapest – Ingyenes felméressel. Szakszerű klíma telepítés, javítás és karbantartás. Hívjon: +36 20 339 4164">
+  <Header />
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-blue-50 to-white py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+          Klímaszerelés Budapest – Ingyenes Felméressel
+        </h1>
+        <p class="text-xl text-gray-600 mb-8">
+          Szakszerű klíma telepítés, javítás és karbantartás Budapest területén. Ingyenes felmérés és konzultáció.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/ajanlatkeres" class="px-8 py-4 bg-secondary text-white rounded-lg font-semibold shadow-lg hover:shadow-xl transition-shadow">
+            Ajánlatkérés
+          </a>
+          <a href="tel:+36203394164" class="px-8 py-4 bg-white border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors">
+            Hívás
+          </a>
+        </div>
+      </div>
+      <div class="mt-12 max-w-4xl mx-auto">
+        <!-- Hero Image Placeholder -->
+        <div class="bg-gray-200 rounded-lg h-64 flex items-center justify-center text-gray-500">
+          Hero Image Placeholder
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <TrustBar />
+
+  <!-- Services Grid -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Szolgáltatásaink</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <ServiceCard
+          title="Klíma Telepítés"
+          description="Szakszerű klíma telepítés Budapest területén. Inverteres és hagyományos klímák beszerelése garanciával."
+          href="/szolgaltatasok/klima-telepites"
+        />
+        <ServiceCard
+          title="Klíma Javítás"
+          description="Gyors és hatékony klíma javítás. Minden márkához és típushoz. 24 órás ügyelet."
+          href="/szolgaltatasok/klima-javitas"
+        />
+        <ServiceCard
+          title="Fűtés Klímával"
+          description="Energiatakarékos fűtés klímával. H tarifás megoldások Budapesten."
+          href="/szolgaltatasok/futes-klimaval"
+        />
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>

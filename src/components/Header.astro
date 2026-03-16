@@ -5,84 +5,23 @@
   <div class="container mx-auto px-4">
     <div class="flex items-center justify-between py-4">
       <!-- Logo -->
-      <a href="/" class="flex items-center gap-3 group">
-        <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
-          <span class="text-white font-bold text-xl">KF</span>
-        </div>
-        <div>
-          <span class="font-bold text-primary text-xl group-hover:text-secondary transition-colors">KlimaFirst</span>
-          <div class="text-xs text-gray-500 -mt-1">Klímaszerelés Budapest</div>
-        </div>
-      </a>
+      <div class="font-bold text-primary text-xl">
+        KlimaFirst Logo
+      </div>
 
       <!-- Desktop Navigation -->
       <nav class="hidden lg:flex items-center gap-8">
-        <div class="relative group">
-          <button class="flex items-center gap-1 hover:text-secondary transition-colors font-medium">
-            Szolgáltatások
-            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </button>
-          <div class="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-            <div class="p-2">
-              <a href="/szolgaltatasok/klima-telepites" class="block px-4 py-3 rounded-md hover:bg-blue-50 hover:text-primary transition-colors">
-                <div class="font-medium">Klíma Telepítés</div>
-                <div class="text-sm text-gray-500">Szakszerű beszerelés garanciával</div>
-              </a>
-              <a href="/szolgaltatasok/klima-javitas" class="block px-4 py-3 rounded-md hover:bg-blue-50 hover:text-primary transition-colors">
-                <div class="font-medium">Klíma Javítás</div>
-                <div class="text-sm text-gray-500">Gyors hibaelhárítás</div>
-              </a>
-              <a href="/szolgaltatasok/klima-tisztitas" class="block px-4 py-3 rounded-md hover:bg-blue-50 hover:text-primary transition-colors">
-                <div class="font-medium">Karbantartás</div>
-                <div class="text-sm text-gray-500">Éves szűrőcsere és tisztítás</div>
-              </a>
-              <a href="/szolgaltatasok/futes-klimaval" class="block px-4 py-3 rounded-md hover:bg-blue-50 hover:text-primary transition-colors">
-                <div class="font-medium">Fűtés Klímával</div>
-                <div class="text-sm text-gray-500">H tarifás energia-megtakarítás</div>
-              </a>
-            </div>
-          </div>
-        </div>
-
+        <a href="/" class="hover:text-secondary transition-colors font-medium">Főoldal</a>
+        <a href="/szolgaltatasok" class="hover:text-secondary transition-colors font-medium">Szolgáltatások</a>
         <a href="/arak" class="hover:text-secondary transition-colors font-medium">Árak</a>
-
-        <div class="relative group">
-          <button class="flex items-center gap-1 hover:text-secondary transition-colors font-medium">
-            Készülékek
-            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </button>
-          <div class="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-            <div class="p-2">
-              <a href="/keszulekek/fisher-klima" class="block px-4 py-2 rounded-md hover:bg-blue-50 hover:text-primary transition-colors text-sm">Fisher Klíma</a>
-              <a href="/keszulekek/fujitsu-klima" class="block px-4 py-2 rounded-md hover:bg-blue-50 hover:text-primary transition-colors text-sm">Fujitsu Klíma</a>
-              <a href="/keszulekek/toshiba-klima" class="block px-4 py-2 rounded-md hover:bg-blue-50 hover:text-primary transition-colors text-sm">Toshiba Klíma</a>
-              <a href="/keszulekek/daikin-klima" class="block px-4 py-2 rounded-md hover:bg-blue-50 hover:text-primary transition-colors text-sm">Daikin Klíma</a>
-            </div>
-          </div>
-        </div>
-
-        <a href="/referenciak" class="hover:text-secondary transition-colors font-medium">Referenciák</a>
         <a href="/tudastar" class="hover:text-secondary transition-colors font-medium">Tudástár</a>
         <a href="/kapcsolat" class="hover:text-secondary transition-colors font-medium">Kapcsolat</a>
       </nav>
 
       <!-- Phone CTA -->
-      <div class="hidden md:flex items-center gap-4">
-        <div class="text-right">
-          <div class="text-sm text-gray-600">Ingyenes konzultáció</div>
-          <a href="tel:+36203394164" class="font-bold text-primary hover:text-secondary transition-colors">+36 20 339 4164</a>
-        </div>
-        <a href="tel:+36203394164" class="px-6 py-3 bg-gradient-to-r from-secondary to-orange-500 text-white rounded-full font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 flex items-center gap-2">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-          </svg>
-          Hívás
-        </a>
-      </div>
+      <a href="tel:+36203394164" class="px-6 py-3 bg-secondary text-white rounded-lg font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200">
+        Hívjon: +36 20 339 4164
+      </a>
 
       <!-- Mobile Menu Button -->
       <button id="mobile-menu-button" class="lg:hidden p-2 rounded-md hover:bg-gray-100 transition-colors">
@@ -95,38 +34,18 @@
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="lg:hidden hidden bg-white border-t border-gray-100 py-4">
       <nav class="space-y-2">
-        <div class="px-4 py-2">
-          <div class="font-semibold text-gray-900 mb-2">Szolgáltatások</div>
-          <div class="space-y-1 pl-4">
-            <a href="/szolgaltatasok/klima-telepites" class="block py-1 text-gray-600 hover:text-primary transition-colors">Klíma Telepítés</a>
-            <a href="/szolgaltatasok/klima-javitas" class="block py-1 text-gray-600 hover:text-primary transition-colors">Klíma Javítás</a>
-            <a href="/szolgaltatasok/klima-tisztitas" class="block py-1 text-gray-600 hover:text-primary transition-colors">Karbantartás</a>
-            <a href="/szolgaltatasok/futes-klimaval" class="block py-1 text-gray-600 hover:text-primary transition-colors">Fűtés Klímával</a>
-          </div>
-        </div>
-
+        <a href="/" class="block px-4 py-2 text-gray-600 hover:text-primary transition-colors font-medium">Főoldal</a>
+        <a href="/szolgaltatasok" class="block px-4 py-2 text-gray-600 hover:text-primary transition-colors font-medium">Szolgáltatások</a>
         <a href="/arak" class="block px-4 py-2 text-gray-600 hover:text-primary transition-colors font-medium">Árak</a>
-
-        <div class="px-4 py-2">
-          <div class="font-semibold text-gray-900 mb-2">Készülékek</div>
-          <div class="space-y-1 pl-4">
-            <a href="/keszulekek/fisher-klima" class="block py-1 text-gray-600 hover:text-primary transition-colors">Fisher Klíma</a>
-            <a href="/keszulekek/fujitsu-klima" class="block py-1 text-gray-600 hover:text-primary transition-colors">Fujitsu Klíma</a>
-            <a href="/keszulekek/toshiba-klima" class="block py-1 text-gray-600 hover:text-primary transition-colors">Toshiba Klíma</a>
-            <a href="/keszulekek/daikin-klima" class="block py-1 text-gray-600 hover:text-primary transition-colors">Daikin Klíma</a>
-          </div>
-        </div>
-
-        <a href="/referenciak" class="block px-4 py-2 text-gray-600 hover:text-primary transition-colors font-medium">Referenciák</a>
         <a href="/tudastar" class="block px-4 py-2 text-gray-600 hover:text-primary transition-colors font-medium">Tudástár</a>
         <a href="/kapcsolat" class="block px-4 py-2 text-gray-600 hover:text-primary transition-colors font-medium">Kapcsolat</a>
 
         <div class="px-4 pt-4 border-t border-gray-100">
-          <a href="tel:+36203394164" class="flex items-center justify-center gap-2 w-full py-3 bg-gradient-to-r from-secondary to-orange-500 text-white rounded-lg font-semibold shadow-md hover:shadow-lg transition-shadow">
+          <a href="tel:+36203394164" class="flex items-center justify-center gap-2 w-full py-3 bg-secondary text-white rounded-lg font-semibold shadow-md hover:shadow-lg transition-shadow">
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
               <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
             </svg>
-            +36 20 339 4164
+            Hívjon: +36 20 339 4164
           </a>
         </div>
       </nav>
@@ -152,4 +71,3 @@
     });
   }
 </script>
-
