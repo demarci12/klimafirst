@@ -7,28 +7,233 @@ const description = "Klímakészülékek: Fisher, Fujitsu, Toshiba, Daikin. Kiv�
 ---
 <BaseLayout {title} {description}>
   <Header />
-  <main class="container mx-auto py-12">
-    <h1 class="text-3xl font-bold mb-6">Klímakészülékek</h1>
-    <p>1-2 mondatos placeholder tartalom az elérhető klímamárkákról.</p>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-      <a href="/keszulekek/fisher-klima" class="block bg-white rounded shadow p-6 hover:ring-2 hover:ring-primary transition">
-        <h2 class="text-xl font-bold mb-2">Fisher Klíma</h2>
-        <p>Megbízható Fisher klímák Magyarország szerte.</p>
-      </a>
-      <a href="/keszulekek/fujitsu-klima" class="block bg-white rounded shadow p-6 hover:ring-2 hover:ring-primary transition">
-        <h2 class="text-xl font-bold mb-2">Fujitsu Klíma</h2>
-        <p>Prémium Fujitsu klímák kiváló hatásfokkal.</p>
-      </a>
-      <a href="/keszulekek/toshiba-klima" class="block bg-white rounded shadow p-6 hover:ring-2 hover:ring-primary transition">
-        <h2 class="text-xl font-bold mb-2">Toshiba Klíma</h2>
-        <p>Energiatakarékos Toshiba klímák.</p>
-      </a>
-      <a href="/keszulekek/daikin-klima" class="block bg-white rounded shadow p-6 hover:ring-2 hover:ring-primary transition">
-        <h2 class="text-xl font-bold mb-2">Daikin Klíma</h2>
-        <p>Csúcstechnológiás Daikin megoldások.</p>
-      </a>
-    </div>
-    <a href="/arak" class="inline-block mt-8 bg-primary text-white px-6 py-2 rounded-full font-semibold hover:bg-secondary transition">Árak</a>
+  <main class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-orange-50">
+    <!-- Hero Section -->
+    <section class="relative py-20 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5"></div>
+      <div class="container mx-auto px-4 relative">
+        <div class="text-center max-w-4xl mx-auto">
+          <h1 class="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            Prémium Klímakészülékek
+          </h1>
+          <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+            Fedezze fel a legjobb inverter klímamárkákat Budapesten. Szakszerű szerelés, garancia és energia-megtakarítás.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/ajanlatkeres" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-secondary to-orange-500 text-white rounded-full font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+              </svg>
+              Ingyenes Árajánlat
+            </a>
+            <a href="tel:+36203394164" class="inline-flex items-center gap-2 px-8 py-4 border-2 border-primary text-primary rounded-full font-semibold hover:bg-primary hover:text-white transition-all duration-200">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+              </svg>
+              +36 20 339 4164
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Decorative Elements -->
+      <div class="absolute top-10 left-10 w-20 h-20 bg-primary/10 rounded-full blur-xl"></div>
+      <div class="absolute bottom-10 right-10 w-32 h-32 bg-secondary/10 rounded-full blur-xl"></div>
+    </section>
+
+    <!-- Brands Grid -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold mb-4">Válassza ki az Önnek megfelelő márkát</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Minden márka esetében teljes körű szolgáltatást nyújtunk: ingyenes felmérés, szakszerű szerelés, garancia és karbantartás.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <!-- Fisher -->
+          <a href="/keszulekek/fisher-klima" class="group block">
+            <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 overflow-hidden">
+              <div class="relative h-48 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
+                <div class="text-white text-center">
+                  <div class="text-4xl font-bold mb-2">Fisher</div>
+                  <div class="text-blue-100">Magyar minőség</div>
+                </div>
+                <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors"></div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-3 text-gray-900">Fisher Klíma</h3>
+                <p class="text-gray-600 mb-4">Hazai gyártású, megbízható inverter klímák kedvező áron. Kiváló magyarországi garancia és szervizhálózat.</p>
+                <div class="flex items-center justify-between">
+                  <div class="text-sm text-gray-500">Kezdő: 75.000 Ft-tól</div>
+                  <div class="flex items-center text-secondary font-semibold group-hover:text-primary transition-colors">
+                    Részletek
+                    <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <!-- Fujitsu -->
+          <a href="/keszulekek/fujitsu-klima" class="group block">
+            <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 overflow-hidden">
+              <div class="relative h-48 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
+                <div class="text-white text-center">
+                  <div class="text-4xl font-bold mb-2">Fujitsu</div>
+                  <div class="text-green-100">Japán precizitás</div>
+                </div>
+                <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors"></div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-3 text-gray-900">Fujitsu Klíma</h3>
+                <p class="text-gray-600 mb-4">Prémium japán technológia, kivételesen halk működés és energiahatékonyság. Professzionális felhasználók választása.</p>
+                <div class="flex items-center justify-between">
+                  <div class="text-sm text-gray-500">Kezdő: 100.000 Ft-tól</div>
+                  <div class="flex items-center text-secondary font-semibold group-hover:text-primary transition-colors">
+                    Részletek
+                    <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <!-- Toshiba -->
+          <a href="/keszulekek/toshiba-klima" class="group block">
+            <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 overflow-hidden">
+              <div class="relative h-48 bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
+                <div class="text-white text-center">
+                  <div class="text-4xl font-bold mb-2">Toshiba</div>
+                  <div class="text-purple-100">Innovatív megoldások</div>
+                </div>
+                <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors"></div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-3 text-gray-900">Toshiba Klíma</h3>
+                <p class="text-gray-600 mb-4">Modern technológiák és intelligens funkciók. Kiváló energiahatékonyság és felhasználóbarát vezérlés.</p>
+                <div class="flex items-center justify-between">
+                  <div class="text-sm text-gray-500">Kezdő: 90.000 Ft-tól</div>
+                  <div class="flex items-center text-secondary font-semibold group-hover:text-primary transition-colors">
+                    Részletek
+                    <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <!-- Daikin -->
+          <a href="/keszulekek/daikin-klima" class="group block">
+            <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 overflow-hidden relative">
+              <div class="absolute top-4 right-4 z-10">
+                <span class="bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
+                  AJÁNLOTT
+                </span>
+              </div>
+              <div class="relative h-48 bg-gradient-to-br from-red-400 to-pink-600 flex items-center justify-center">
+                <div class="text-white text-center">
+                  <div class="text-4xl font-bold mb-2">Daikin</div>
+                  <div class="text-red-100">Világvezető márka</div>
+                </div>
+                <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors"></div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-3 text-gray-900">Daikin Klíma</h3>
+                <p class="text-gray-600 mb-4">A világ vezető klímagyártója. 10 év garancia, csúcstechnológia és kivételes energiahatékonyság.</p>
+                <div class="flex items-center justify-between">
+                  <div class="text-sm text-gray-500">Kezdő: 95.000 Ft-tól</div>
+                  <div class="flex items-center text-secondary font-semibold group-hover:text-primary transition-colors">
+                    Részletek
+                    <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold mb-4">Miért válasszon minket?</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Nem csak a készülék számít, hanem a teljes szolgáltatás minősége.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div class="text-center group">
+            <div class="w-16 h-16 bg-gradient-to-br from-primary to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform shadow-lg">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Garancia</h3>
+            <p class="text-gray-600">12 hónap szerelési garancia minden munkára, plusz a gyártói garancia a készülékre.</p>
+          </div>
+
+          <div class="text-center group">
+            <div class="w-16 h-16 bg-gradient-to-br from-secondary to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform shadow-lg">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Energia-megtakarítás</h3>
+            <p class="text-gray-600">Inverter technológiával akár 50-60% energia-megtakarítás H tarifával.</p>
+          </div>
+
+          <div class="text-center group">
+            <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform shadow-lg">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Szakértelem</h3>
+            <p class="text-gray-600">5000+ szerelés tapasztalatával garantáljuk a professzionális munkát.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-primary to-secondary">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold text-white mb-4">Készen áll a klíma beszerelésére?</h2>
+        <p class="text-white/90 mb-8 max-w-2xl mx-auto">
+          Vegye fel velünk a kapcsolatot még ma! Ingyenes helyszíni felmérés és személyre szabott árajánlat.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/ajanlatkeres" class="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary rounded-full font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+            </svg>
+            Árajánlat Kérés
+          </a>
+          <a href="tel:+36203394164" class="inline-flex items-center gap-2 px-8 py-4 border-2 border-white text-white rounded-full font-semibold hover:bg-white hover:text-primary transition-all duration-200">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+            </svg>
+            +36 20 339 4164
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
   <Footer />
 </BaseLayout>
+
