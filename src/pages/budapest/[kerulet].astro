@@ -1,0 +1,76 @@
+---
+import { keruletek } from '../../data/keruletek';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+export async function getStaticPaths() {
+  return keruletek.map(k => ({
+    params: { kerulet: k.slug },
+    props: { kerulet: k }
+  }));
+}
+const { kerulet } = Astro.props;
+const title = `Klímaszerelés Budapest ${kerulet.romanNum}. kerület | KlimaFirst`;
+const description = `Klímaszerelés Budapest ${kerulet.name}. Ingyenes helyszíni felmérés ${kerulet.landmark} környékén. +36 20 339 4164`;
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": `KlimaFirst – Klímaszerelés Budapest ${kerulet.romanNum}. kerület`,
+  "url": `https://klimafirst.hu/budapest/${kerulet.slug}`,
+  "telephone": "+36-20-339-4164",
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": `Budapest ${kerulet.romanNum}. kerület`,
+    "containedInPlace": { "@type": "City", "name": "Budapest" }
+  }
+};
+---
+<BaseLayout {title} {description} schema={schema}>
+  <Header />
+  <main class="container mx-auto py-12">
+    <Breadcrumb items={[
+      { label: 'Főoldal', href: '/' },
+      { label: 'Budapest', href: '/budapest' },
+      { label: kerulet.name, href: `/budapest/${kerulet.slug}` }
+    ]} />
+    <h1 class="text-3xl font-bold mb-6">Klímaszerelés Budapest {kerulet.romanNum}. kerület</h1>
+    <p class="mb-6">{kerulet.description}</p>
+    <div class="bg-blue-100 border-l-4 border-primary p-4 mb-8">
+      <p><strong>Terület:</strong> {kerulet.landmark}</p>
+    </div>
+    <section class="mb-8">
+      <h2 class="text-2xl font-bold mb-4">Klímaszolgáltatások {kerulet.name}</h2>
+      <ul class="list-disc ml-6 space-y-1">
+        <li><a href="/szolgaltatasok/klima-telepites" class="text-primary">Klíma Telepítés</a> – Professzionális beszerelés</li>
+        <li><a href="/szolgaltatasok/klima-javitas" class="text-primary">Klíma Javítás</a> – Gyors szervizelés</li>
+        <li><a href="/szolgaltatasok/klima-tisztitas" class="text-primary">Karbantartás</a> – Rendszeres tisztítás</li>
+        <li><a href="/szolgaltatasok/futes-klimaval" class="text-primary">Fűtés Klímával</a> – Energiatakarékos fűtés</li>
+      </ul>
+    </section>
+    <section class="my-8">
+      <h2 class="text-2xl font-bold mb-4">Gyakori kérdések {kerulet.name}</h2>
+      <div class="space-y-2">
+        <details class="border rounded">
+          <summary class="font-semibold cursor-pointer px-4 py-2 bg-gray-50">Mennyibe kerül a klímaszerelés {kerulet.name}?</summary>
+          <div class="px-4 py-2 text-gray-700">Placeholder válasz az árakkal kapcsolatban.</div>
+        </details>
+        <details class="border rounded">
+          <summary class="font-semibold cursor-pointer px-4 py-2 bg-gray-50">Szükséges engedély a kültéri egységhez {kerulet.name}?</summary>
+          <div class="px-4 py-2 text-gray-700">Placeholder válasz az engedélyekről.</div>
+        </details>
+        <details class="border rounded">
+          <summary class="font-semibold cursor-pointer px-4 py-2 bg-gray-50">Meddig tart a szerelés {kerulet.name}?</summary>
+          <div class="px-4 py-2 text-gray-700">Placeholder válasz az időtartamról.</div>
+        </details>
+      </div>
+    </section>
+    <div class="bg-secondary text-white rounded p-6 text-center">
+      <h2 class="text-2xl font-bold mb-2">Ingyenes Ajánlatkérés {kerulet.name}!</h2>
+      <p class="mb-4">Hívjon minket vagy kérjen ingyenes felmérést.</p>
+      <a href="tel:+36203394164" class="inline-block bg-white text-secondary px-6 py-2 rounded-full font-semibold hover:bg-primary hover:text-white transition mr-4">+36 20 339 4164</a>
+      <a href="/ajanlatkeres" class="inline-block bg-white text-secondary px-6 py-2 rounded-full font-semibold hover:bg-primary hover:text-white transition">Ajánlatkérés</a>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

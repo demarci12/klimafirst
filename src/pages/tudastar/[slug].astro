@@ -1,0 +1,48 @@
+---
+import { getCollection } from 'astro:content';
+import BlogLayout from '../../layouts/BlogLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+export async function getStaticPaths() {
+  const posts = await getCollection('tudastar');
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props: { post }
+  }));
+}
+const { post } = Astro.props;
+const { title, description, tags } = post.data;
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "image": `https://klimafirst.hu${post.data.image}`,
+  "datePublished": post.data.pubDate.toISOString(),
+  "dateModified": post.data.updatedDate?.toISOString() || post.data.pubDate.toISOString(),
+  "author": { "@type": "Person", "name": post.data.author, "url": "https://klimafirst.hu/rolunk" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "KlimaFirst",
+    "logo": { "@type": "ImageObject", "url": "https://klimafirst.hu/images/logo.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": `https://klimafirst.hu/tudastar/${post.slug}` }
+};
+---
+<BlogLayout title={title} description={description} schema={schema}>
+  <Header />
+  <main class="container mx-auto py-12">
+    <article class="max-w-2xl mx-auto">
+      <h1 class="text-3xl font-bold mb-2">{title}</h1>
+      <div class="text-sm text-gray-500 mb-6">{post.data.pubDate.toLocaleDateString('hu-HU')}</div>
+      <div class="prose prose-lg max-w-none mb-8">
+        <post.Content />
+      </div>
+      <div class="border-t pt-8">
+        <RelatedPosts tags={tags} currentSlug={post.slug} />
+      </div>
+    </article>
+  </main>
+  <Footer />
+</BlogLayout>

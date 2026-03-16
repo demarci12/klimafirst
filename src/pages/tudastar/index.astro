@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+const title = "Tudástár | KlimaFirst Blog";
+const description = "Klímaszereléssel kapcsolatos cikkek, tippek és tudás. Olvassa el szakértőnktől.";
+import { getCollection } from 'astro:content';
+const posts = await getCollection('tudastar');
+---
+<BaseLayout {title} {description}>
+  <Header />
+  <main class="container mx-auto py-12">
+    <h1 class="text-3xl font-bold mb-6">Tudástár</h1>
+    <p>Klímaszereléssel, karbantartással és energiatakarékossággal kapcsolatos hasznos cikkek.</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+      {posts.map((post) => (
+        <a href={`/tudastar/${post.slug}`} class="block bg-white rounded shadow p-6 hover:ring-2 hover:ring-primary transition">
+          <h2 class="text-xl font-bold mb-2">{post.data.title}</h2>
+          <p class="text-sm text-gray-600 mb-2">{post.data.description}</p>
+          <div class="text-xs text-gray-500">{post.data.pubDate.toLocaleDateString('hu-HU')}</div>
+        </a>
+      ))}
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

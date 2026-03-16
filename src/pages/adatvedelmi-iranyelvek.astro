@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+const title = "Adatvédelmi Irányelvek | KlimaFirst";
+const description = "Adatvédelmi irányelvek és személyes adatok kezelése.";
+---
+<BaseLayout {title} {description}>
+  <Header />
+  <main class="container mx-auto py-12 max-w-2xl">
+    <h1 class="text-3xl font-bold mb-6">Adatvédelmi Irányelvek</h1>
+    <p>Placeholder tartalom az adatvédelmi irányelvekről.</p>
+  </main>
+  <Footer />
+</BaseLayout>

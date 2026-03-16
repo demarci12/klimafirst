@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+const title = "Fűtés Klímával Budapest | Energiatakarékos Megoldás | KlimaFirst";
+const description = "Klímával fűtés Budapesten – gazdaságos alternatíva gáz helyett. Ingyenes felmérés. Dolgozunk H és GEO tarifával is.";
+const schema = {/* Service schema */};
+---
+<BaseLayout {title} {description} schema={schema}>
+  <Header />
+  <main class="container mx-auto py-12">
+    <h1 class="text-3xl font-bold mb-6">Fűtés Klímával – Energiatakarékos Megoldás Budapesten</h1>
+    <p>1-2 mondatos placeholder tartalom a fűtési megoldásokról.</p>
+    <section class="mb-8">
+      <h2 class="text-2xl font-bold mb-4">Klíma vs Gáz vs Villany Fűtés Összehasonlítása</h2>
+      <p>Placeholder tartalma az összehasonlító táblázatnak.</p>
+    </section>
+    <section class="mb-8">
+      <h2 class="text-2xl font-bold mb-4">H Tarifa és GEO Tarifa</h2>
+      <p>Placeholder tartalma a tarifákról és az energiatakarékosságról.</p>
+    </section>
+    <RelatedPosts tags={["futes"]} />
+    <a href="/kapcsolat" class="inline-block mt-8 bg-secondary text-white px-6 py-2 rounded-full font-semibold hover:bg-primary transition">Kapcsolat</a>
+  </main>
+  <Footer />
+</BaseLayout>

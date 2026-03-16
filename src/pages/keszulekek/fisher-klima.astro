@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+const title = "Fisher Klíma Budapest | KlimaFirst";
+const description = "Fisher klímakészülékek: megbízható és hatékony hűtési és fűtési megoldások. Ingyenes felmérés.";
+---
+<BaseLayout {title} {description}>
+  <Header />
+  <main class="container mx-auto py-12">
+    <h1 class="text-3xl font-bold mb-6">Fisher Klíma</h1>
+    <p>1-2 mondatos placeholder tartalom a Fisher klímákról.</p>
+    <section class="my-8">
+      <h2 class="text-2xl font-bold mb-4">Miért válassza a Fisher klímát?</h2>
+      <ul class="list-disc ml-6 space-y-1">
+        <li>Megbízható és tartós</li>
+        <li>Jó ár-érték arány</li>
+        <li>Gazdaságos működés</li>
+      </ul>
+    </section>
+    <a href="/arak" class="inline-block mt-8 bg-primary text-white px-6 py-2 rounded-full font-semibold hover:bg-secondary transition">Árak</a>
+    <a href="/kapcsolat" class="inline-block ml-4 bg-secondary text-white px-6 py-2 rounded-full font-semibold hover:bg-primary transition">Felmérés kérése</a>
+  </main>
+  <Footer />
+</BaseLayout>

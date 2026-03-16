@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+const title = "Rólunk | KlimaFirst – Juhász Solutions Kft.";
+const description = "KlimaFirst: 5000+ szerelés, szakértelem, precíz munkavégzés. Juhász Balázs és csapata.";
+---
+<BaseLayout {title} {description}>
+  <Header />
+  <main class="container mx-auto py-12">
+    <h1 class="text-3xl font-bold mb-6">Rólunk</h1>
+    <section class="mb-8">
+      <h2 class="text-2xl font-bold mb-4">KlimaFirst – Juhász Solutions Kft.</h2>
+      <p>1-2 mondatos placeholder tartalom a cégről és története.</p>
+    </section>
+    <section class="mb-8">
+      <h2 class="text-2xl font-bold mb-4">Juhász Balázs</h2>
+      <p>Placeholder tartalom a tulajdonos szakértelmérőol és tapasztalatáról.</p>
+    </section>
+    <section class="mb-8">
+      <h2 class="text-2xl font-bold mb-4">Miért választanak minket?</h2>
+      <ul class="list-disc ml-6 space-y-1">
+        <li>5000+ zufriedene Kunden</li>
+        <li>Szakértelem és tapasztalat</li>
+        <li>Precíz munkavégzés</li>
+        <li>12 hónap garancia</li>
+      </ul>
+    </section>
+    <a href="/kapcsolat" class="inline-block mt-8 bg-secondary text-white px-6 py-2 rounded-full font-semibold hover:bg-primary transition">Vegyük Fel a Kapcsolatot</a>
+  </main>
+  <Footer />
+</BaseLayout>

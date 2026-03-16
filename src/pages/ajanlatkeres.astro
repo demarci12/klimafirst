@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ContactForm from '../components/ContactForm.astro';
+const title = "Ingyenes Ajánlatkérés | KlimaFirst";
+const description = "Kérjen ingyenes ajánlatot klímaszereléshez. Részletes online forma.";
+---
+<BaseLayout {title} {description}>
+  <Header />
+  <main class="container mx-auto py-12">
+    <h1 class="text-3xl font-bold mb-6">Részletes Online Ajánlatkérő Űrlap</h1>
+    <p>Töltse ki az alábbi formát, és mi visszakeresünk egy ingyenes ajánlattal.</p>
+    <ContactForm />
+  </main>
+  <Footer />
+</BaseLayout>

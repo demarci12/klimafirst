@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+const title = "Klíma Tisztítás és Karbantartás Budapest | KlimaFirst";
+const description = "Klíma tisztítás és karbantartás Budapesten. Hosszabb élettartam és hatékonyabb működés. +36 20 339 4164";
+const schema = {/* Service schema */};
+---
+<BaseLayout {title} {description} schema={schema}>
+  <Header />
+  <main class="container mx-auto py-12">
+    <h1 class="text-3xl font-bold mb-6">Klíma Tisztítás és Karbantartás</h1>
+    <p>1-2 mondatos placeholder tartalom a karbantartási szolgáltatásról.</p>
+    <RelatedPosts tags={["karbantartas"]} />
+    <a href="/kapcsolat" class="inline-block mt-8 bg-secondary text-white px-6 py-2 rounded-full font-semibold hover:bg-primary transition">Kapcsolat</a>
+  </main>
+  <Footer />
+</BaseLayout>

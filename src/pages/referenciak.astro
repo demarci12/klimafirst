@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+const title = "Referenciák | Klímaszerelés Budapest | KlimaFirst";
+const description = "5000+ zufriedene Kunden bestätigen unsere Qualität in Budapest.";
+---
+<BaseLayout {title} {description}>
+  <Header />
+  <main class="container mx-auto py-12">
+    <h1 class="text-3xl font-bold mb-6">Ügyfeleink Mondták</h1>
+    <p>Placeholder tartalom az ügyfélreferenciákról és véleményekről.</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
+      <div class="bg-white rounded shadow p-6">
+        <div class="font-bold mb-2">Budapest XIII. kerület</div>
+        <div>"1-2 mondatos ügyfél vélemény"</div>
+        <div class="text-xs text-gray-500 mt-2">Daikin 3.5 kW</div>
+      </div>
+      <div class="bg-white rounded shadow p-6">
+        <div class="font-bold mb-2">Budapest XI. kerület</div>
+        <div>"1-2 mondatos ügyfél vélemény"</div>
+        <div class="text-xs text-gray-500 mt-2">Fujitsu 5 kW</div>
+      </div>
+      <div class="bg-white rounded shadow p-6">
+        <div class="font-bold mb-2">Budapest II. kerület</div>
+        <div>"1-2 mondatos ügyfél vélemény"</div>
+        <div class="text-xs text-gray-500 mt-2">Fisher 2.5 kW</div>
+      </div>
+    </div>
+    <a href="/kapcsolat" class="inline-block mt-8 bg-secondary text-white px-6 py-2 rounded-full font-semibold hover:bg-primary transition">Ingyenes Ajánlatkérés</a>
+  </main>
+  <Footer />
+</BaseLayout>

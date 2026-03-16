@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import KlimaCalculator from '../components/KlimaCalculator.astro';
+const title = "Klíma Méretezési Kalkulátor | KlimaFirst";
+const description = "Kalkulálja ki mekkora klíma szükséges az Ön ingatlanához. Ingyenes és egyszerű.";
+---
+<BaseLayout {title} {description}>
+  <Header />
+  <main class="container mx-auto py-12">
+    <h1 class="text-3xl font-bold mb-6">Klíma Méretezési Kalkulátor</h1>
+    <p>Adja meg az ingatlan méretét és a belmagasságot, hogy megtudja mekkora klímára van szüksége.</p>
+    <KlimaCalculator mini={false} />
+    <section class="my-12">
+      <h2 class="text-2xl font-bold mb-4">Hogyan működik a kalkulátor?</h2>
+      <p>1-2 mondatos placeholder tartalom a kalkulátor működésérőol.</p>
+    </section>
+    <section class="my-12">
+      <h2 class="text-2xl font-bold mb-4">Van-e más tényező?</h2>
+      <p>Placeholder tartalom más tényezőkről (szigetelés, ablak mérete, stb.)</p>
+    </section>
+    <a href="/ajanlatkeres" class="inline-block mt-8 bg-secondary text-white px-6 py-2 rounded-full font-semibold hover:bg-primary transition">Ingyenes Ajánlatkérés</a>
+  </main>
+  <Footer />
+</BaseLayout>

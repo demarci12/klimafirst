@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ContactForm from '../components/ContactForm.astro';
+const title = "Kapcsolat | KlimaFirst";
+const description = "Lépjen velünk kapcsolatba klímaszereléssel vagy ajánlatkéréssel. +36 20 339 4164";
+---
+<BaseLayout {title} {description}>
+  <Header />
+  <main class="container mx-auto py-12">
+    <h1 class="text-3xl font-bold mb-6">Kapcsolat</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div>
+        <h2 class="text-2xl font-bold mb-4">Elérhetőségeink</h2>
+        <div class="space-y-2">
+          <div><strong>Telefon:</strong> <a href="tel:+36203394164" class="text-primary">+36 20 339 4164</a></div>
+          <div><strong>Email:</strong> <a href="mailto:info@klimafirst.hu" class="text-primary">info@klimafirst.hu</a></div>
+          <div><strong>Cég:</strong> Juhász Solutions Kft.</div>
+          <div><strong>Tagline:</strong> "Elsők a Megoldásban"</div>
+          <div><strong>Szolgáltatási terület:</strong> Budapest (összes 23 kerület) + Budapest–Siófok folyosó</div>
+        </div>
+      </div>
+      <div>
+        <ContactForm />
+      </div>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import PriceTable from '../components/PriceTable.astro';
+import FAQ from '../components/FAQ.astro';
+import { pricing, faq } from '../data/pricing';
+const title = "Klímaszerelés Árak Budapest 2025 | KlimaFirst";
+const description = "Klímaszerelés árak Budapesten 2025-ben. Nettó 75 000 Ft-tól. Mit tartalmaz az ár? Ingyenes felmérés és kiszállás.";
+---
+<BaseLayout {title} {description}>
+  <Header />
+  <main class="container mx-auto py-12">
+    <h1 class="text-3xl font-bold mb-6">Klímaszerelés Árak Budapest 2025</h1>
+    <PriceTable prices={pricing} />
+    <section class="my-8">
+      <h2 class="text-2xl font-bold mb-4">Mit tartalmaz az ár?</h2>
+      <ul class="list-disc ml-6 space-y-1">
+        <li>Ingyenes helyszíni felmérés</li>
+        <li>Szállítási díj Budapesten</li>
+        <li>Anyagköltség (rézcső, szigetelés, stb.)</li>
+        <li>Szakszerű beszerelés</li>
+        <li>Beüzemelés és betanítás</li>
+        <li>1 év garancia a szerelési munkára</li>
+      </ul>
+    </section>
+    <section class="my-8">
+      <h2 class="text-2xl font-bold mb-4">Mit NEM tartalmaz az ár?</h2>
+      <ul class="list-disc ml-6 space-y-1">
+        <li>Klímaberendezés ára (150 000 – 600 000 Ft + ÁFA, típustól függően)</li>
+        <li>Rézcső 2 fm felett: 12 500 Ft + ÁFA/fm</li>
+        <li>Falhorony: 20 000 Ft + ÁFA/fm</li>
+        <li>Kondenzvíz külön nyomvonal: 2 500 Ft + ÁFA/fm</li>
+      </ul>
+    </section>
+    <section class="my-8">
+      <h2 class="text-2xl font-bold mb-4">Karbantartás Árak</h2>
+      <p>Karbantartás: 15 000 Ft + ÁFA / készülék</p>
+    </section>
+    <FAQ items={faq} />
+    <a href="/ajanlatkeres" class="inline-block mt-8 bg-secondary text-white px-6 py-2 rounded-full font-semibold hover:bg-primary transition">Ingyenes Ajánlatkérés</a>
+  </main>
+  <Footer />
+</BaseLayout>
