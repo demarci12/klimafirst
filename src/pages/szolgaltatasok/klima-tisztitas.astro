@@ -3,17 +3,57 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import RelatedPosts from '../../components/RelatedPosts.astro';
+import FAQ from '../../components/FAQ.astro';
 const title = "Klíma Tisztítás és Karbantartás Budapest | KlimaFirst";
 const description = "Klíma tisztítás és karbantartás Budapesten. Hosszabb élettartam és hatékonyabb működés. +36 20 339 4164";
-const schema = {/* Service schema */};
+const faq = [
+  { q: 'Milyen gyakran szükséges karbantartás?', a: 'Javasolt évente legalább egyszer, nyár előtt és tél előtt ideális időpontok.' },
+  { q: 'Mit csinálnak a karbantartás során?', a: 'Szűrő tisztítása/cseréje, csatornák tisztítása, freon nyomás ellenőrzése, elektromos csatlakozások vizsgálata.' },
+  { q: 'Mennyibe kerül az éves karbantartás?', a: '15 000 Ft + ÁFA egy készülékért, mely az energia takarékossággal hamar megtérül.' },
+  { q: 'Megőriz a garancia a karbantartás?', a: 'Igen, a gyári garancia megmarad, ha rendszeres karbantartást végeznek szakemberek által.' }
+];
 ---
-<BaseLayout {title} {description} schema={schema}>
+<BaseLayout {title} {description}>
   <Header />
   <main class="container mx-auto py-12">
     <h1 class="text-3xl font-bold mb-6">Klíma Tisztítás és Karbantartás</h1>
-    <p>1-2 mondatos placeholder tartalom a karbantartási szolgáltatásról.</p>
+    <p class="text-lg mb-8">A klímaberendezés hosszú élettartama és hatékony működése függ a rendszeres karbantartástól. A KlimaFirst éves karbantartási csomag biztosítja az optimális teljesítményt és az energia hatékonyságot.</p>
+    
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Karbantartási Csomag</h2>
+      <div class="bg-blue-50 p-6 rounded border-l-4 border-primary">
+        <p className="mb-4"><strong>Az 15 000 Ft + ÁFA éves karbantartás tartalmazza:</strong></p>
+        <ul className="list-disc ml-6 space-y-2">
+          <li>Beltéri és kültéri szűrő tisztítása/cseréje</li>
+          <li>Klíma csatorna és csatlakozások tisztítása</li>
+          <li>Freon nyomás és szivárgás ellenőrzése</li>
+          <li>Elektromosság és vezetékek vizsgálata</li>
+          <li>Beüzemelés és működés tesztelése</li>
+          <li>Szakcég által felírt garancia tanúsítvány</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Miért Fontos a Karbantartás?</h2>
+      <ul className="space-y-3">
+        <li><strong>Energia hatékonyság:</strong> Tisztított klíma 20-30%-kal kevesebb áramot fogyaszt.</li>
+        <li><strong>Hosszabb élettartam:</strong> Rendszeres karbantartás meghosszabbítja a berendezés élettartamát 2-3 évvel.</li>
+        <li><strong>Egészségi aspekt:</strong> Tisztított szűrők megelőzik a baktériumok és allergiák terjedését.</li>
+        <li><strong>Garanciavédelem:</strong> A gyári garancia megmarad a rendszeres szakszerű karbantartásnál.</li>
+        <li><strong>Halkabb működés:</strong> Tisztított komponensek kisebb hanggal működnek.</li>
+      </ul>
+    </section>
+
+    <FAQ items={faq} />
+    
     <RelatedPosts tags={["karbantartas"]} />
-    <a href="/kapcsolat" class="inline-block mt-8 bg-secondary text-white px-6 py-2 rounded-full font-semibold hover:bg-primary transition">Kapcsolat</a>
+    
+    <div class="bg-secondary text-white rounded p-6 text-center mt-8">
+      <h2 class="text-2xl font-bold mb-2">Karbantartás Megrendelése</h2>
+      <a href="/ajanlatkeres" class="inline-block bg-white text-secondary px-6 py-2 rounded-full font-semibold hover:bg-primary hover:text-white transition mr-4">Karbantartás Rendelés</a>
+      <a href="tel:+36203394164" class="inline-block bg-primary text-white px-6 py-2 rounded-full font-semibold hover:bg-white hover:text-secondary transition">+36 20 339 4164</a>
+    </div>
   </main>
   <Footer />
 </BaseLayout>

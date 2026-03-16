@@ -1,5 +1,6 @@
 import { z, defineCollection } from 'astro:content';
-export const blogCollection = defineCollection({
+
+const tudastar = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string().max(160),
@@ -10,5 +11,9 @@ export const blogCollection = defineCollection({
     image: z.string(),
     imageAlt: z.string(),
     keywords: z.array(z.string()),
-  })
+  }),
 });
+
+export const collections = {
+  tudastar,
+};

@@ -3,17 +3,53 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import RelatedPosts from '../../components/RelatedPosts.astro';
+import FAQ from '../../components/FAQ.astro';
 const title = "Klíma Javítás Budapest | Gyors Szervizelés | KlimaFirst";
-const description = "Klíma javítás Budapesten, gyors és szakszerű szervizelés. +36 20 339 4164";
-const schema = {/* Service schema */};
+const description = "Klíma javítás Budapesten, gyors és szakszerű szervizelés. Általános hiba diagnosztika és megoldása. +36 20 339 4164";
+const faq = [
+  { q: 'Hány óra alatt javítják meg a klímát?', a: 'A diagnosztika és javítás típusától függ: szűrőcsere 30 perc, freon töltés 1-2 óra, gépészeti hiba 2-4 óra.' },
+  { q: 'Milyen hibákat tudnak javítani?', a: 'Nem hűt/fűt, freon szivárgás, elektromos hiba, hangos üzemelés, kondenzvíz elvezetési problémák.' },
+  { q: 'Van garanciája a javításnak?', a: 'Igen, az elvégzett munka 6 hónapos garanciát tartalmaz.' },
+  { q: 'Szükséges-e szűrőcsere?', a: 'A klímaberendezésben a szűrőket évente 1-2 alkalommal érdemes cserélni a hatékony működéshez.' }
+];
 ---
-<BaseLayout {title} {description} schema={schema}>
+<BaseLayout {title} {description}>
   <Header />
   <main class="container mx-auto py-12">
     <h1 class="text-3xl font-bold mb-6">Klíma Javítás Budapest</h1>
-    <p>1-2 mondatos placeholder tartalom a klíma javítási szolgáltatásról.</p>
+    <p class="text-lg mb-8">A klímabeszerzés után a legfontosabb feladat az időbeni javítás. A KlimaFirst nap mint nap javít klímákat Budapesten, és a legtöbb hiba ugyanaznap elhárítható telefon hívás után.</p>
+    
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Gyakori Klímahiba-Tünetek</h2>
+      <ul class="space-y-3">
+        <li><strong>Nem hűt/fűt:</strong> Legtöbbször szűrő-problémá vagy freon hiány. Diagnosztizálás szükséges.</li>
+        <li><strong>Hibakód jelenik meg:</strong> Az elektronika azt jelzi, hogy valami nem rendben. Szakcég hívása szükséges.</li>
+        <li><strong>Szokatlan zaj:</strong> Megtört alkatrész vagy gépészeti kopás jelzete.</li>
+        <li><strong>Víz csöpög:</strong> Kondenzvíz elvezetési hiba, amely betöltésre van szorulva.</li>
+        <li><strong>Rossz szag:</strong> Penészgomba vagy baktérium felépülés, szűrő csere szükséges.</li>
+      </ul>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Karbantartás vs Javítás</h2>
+      <p className="mb-4">Wichtig különbség a megelőzésre.</p>
+      <table class="w-full border">
+        <tr class="bg-primary text-white"><th class="p-2">Karbantartás</th><th class="p-2">Javítás</th></tr>
+        <tr><td class="p-2">Rendszeres (évente)</td><td class="p-2">Szükség szerint</td></tr>
+        <tr><td class="p-2">Megelőzés</td><td class="p-2">Hiba javítása</td></tr>
+        <tr><td class="p-2">15 000 Ft/év</td><td class="p-2">Típustól függően</td></tr>
+        <tr><td class="p-2">Garantálja az élettartamot</td><td class="p-2">Drágább hosszú távon</td></tr>
+      </table>
+    </section>
+
+    <FAQ items={faq} />
+    
     <RelatedPosts tags={["javitas"]} />
-    <a href="/kapcsolat" class="inline-block mt-8 bg-secondary text-white px-6 py-2 rounded-full font-semibold hover:bg-primary transition">Kapcsolat</a>
+    
+    <div class="bg-secondary text-white rounded p-6 text-center mt-8">
+      <h2 class="text-2xl font-bold mb-2">Sürgős Javítás? Hívjon Most!</h2>
+      <a href="tel:+36203394164" class="inline-block bg-white text-secondary px-6 py-2 rounded-full font-semibold hover:bg-primary hover:text-white transition">+36 20 339 4164</a>
+    </div>
   </main>
   <Footer />
 </BaseLayout>

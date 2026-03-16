@@ -3,17 +3,63 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import RelatedPosts from '../../components/RelatedPosts.astro';
+import FAQ from '../../components/FAQ.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 const title = "Klíma Telepítés Budapest | KlimaFirst";
-const description = "Professzionális klímaszerelés Budapesten, ingyenes helyszíni felméréssel. +36 20 339 4164";
-const schema = {/* Service schema as per spec */};
+const description = "Professzionális klímaszerelés Budapesten, ingyenes helyszíni felméréssel. Telepítés, javítás, karbantartás – mind a 23 kerületben. +36 20 339 4164";
+const schema = {/* Service schema */};
+const faq = [
+  { q: 'Mennyibe kerül a klímaszerelés?', a: 'Alap szerelés 75 000 Ft-tól indulható, mely tartalmazza a felmérést, szerelést, beüzemelést és 1 év garanciát. Pontos ár a felmérés után adható.' },
+  { q: 'Mennyi ideig tart a szerelés?', a: 'Egy beltéri egység szerelése 3-5 órát vesz igénybe. Több egység esetén több idő szükséges.' },
+  { q: 'Van-e szükség engedélyre?', a: 'Háztartási klímához általában nincs szükség, de társasházban a közösség jóváhagyása szükséges.' },
+  { q: 'Mely márkákat szerelünk?', a: 'Fisher, Fujitsu, Toshiba és Daikin klímákat kínálunk, mindegyik inverteres technológiával.' }
+];
 ---
 <BaseLayout {title} {description} schema={schema}>
   <Header />
   <main class="container mx-auto py-12">
+    <Breadcrumb items={[{ label: 'Főoldal', href: '/' }, { label: 'Szolgáltatások', href: '#' }, { label: 'Klíma Telepítés', href: '#' }]} />
     <h1 class="text-3xl font-bold mb-6">Klíma Telepítés Budapest</h1>
-    <p>1-2 mondatos placeholder tartalom a szolgáltatásról.</p>
+    <p class="text-lg mb-8">A professzionális klímaszerelés nem csupán egy szakcéggel végzett munka, hanem egy teljes folyamat, amely biztosítja, hogy a kiválasztott berendezés évtizedekig megbízhatóan működjön. A KlimaFirst 5000+ szerelésből szerzett tapasztalattal garantálja a szakszerűséget és az ügyfél elégedettségét.</p>
+    
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Klímabeszerzés 5 Lépésben</h2>
+      <ol class="list-decimal ml-6 space-y-3 mb-6">
+        <li><strong>Ingyenes helyszíni felmérés:</strong> Szakemberek meglátogatják a lakást, megvizsgálják az adottságokat és igényeket.</li>
+        <li><strong>Ajánlatadás:</strong> Részletes árajánlat az összes költségről, amely magában foglalja a berendezést, szerelést és kiegészítéseket.</li>
+        <li><strong>Időpont egyeztetés:</strong> A KlimaFirst 1-2 héten belüli szerelést garantál a legtöbb esetben.</li>
+        <li><strong>Szakszerű beszerelés:</strong> 3-5 órás munka, amely tartalmazza a csövezést, elektromos kapcsolódást és tesztelést.</li>
+        <li><strong>Beüzemelés és betanítás:</strong> A szakember megtanítja az ügyfélnek a klíma használatát és beállítási lehetőségeit.</li>
+      </ol>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Mit Tartalmaz a Szerelés Ára?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div><h3 class="font-bold mb-2">✓ Tartalmaz:</h3><ul class="list-disc ml-6 space-y-1"><li>Ingyenes felmérés</li><li>Kiszállás</li><li>Szerelési munka</li><li>Rézcső, szigetelés</li><li>Beüzemelés</li><li>1 év garancia</li></ul></div>
+        <div><h3 class="font-bold mb-2">✗ Nem tartalmaz:</h3><ul class="list-disc ml-6 space-y-1"><li>Klímaberendezés ára (150k-600k Ft)</li><li>Rézcső 2 fm felett (12.5k/fm)</li><li>Falhorony (20k/fm)</li><li>Kondenzvíz vezeték (2.5k/fm)</li></ul></div>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Telepítési Helyek</h2>
+      <p className="mb-4">A klíma szerelés helye kritikus szerepet játszik a hatékonysága. Javasolt elhelyezések:</p>
+      <ul className="list-disc ml-6 space-y-2">
+        <li><strong>Fali mount:</strong> Legáltalánosabb, esztétikus megoldás, 1,5-2m magasságban az ablak felett vagy mellett.</li>
+        <li><strong>Mennyezeti kassetta:</strong> Irodaépületekben és üzletekben népszerű, modern megjelenés.</li>
+        <li><strong>Padlóról induló konzol:</strong> Szoros helyekben ideális, de kevésbé esztétikus.</li>
+      </ul>
+    </section>
+
+    <FAQ items={faq} />
+    
     <RelatedPosts tags={["telepites"]} />
-    <a href="/kapcsolat" class="inline-block mt-8 bg-secondary text-white px-6 py-2 rounded-full font-semibold hover:bg-primary transition">Kapcsolat</a>
+    
+    <div class="bg-secondary text-white rounded p-6 text-center mt-8">
+      <h2 class="text-2xl font-bold mb-2">Kérj Ingyenes Ajánlatot!</h2>
+      <a href="/ajanlatkeres" class="inline-block bg-white text-secondary px-6 py-2 rounded-full font-semibold hover:bg-primary hover:text-white transition mr-4">Ajánlatkérés</a>
+      <a href="tel:+36203394164" class="inline-block bg-primary text-white px-6 py-2 rounded-full font-semibold hover:bg-white hover:text-secondary transition">+36 20 339 4164</a>
+    </div>
   </main>
   <Footer />
 </BaseLayout>
